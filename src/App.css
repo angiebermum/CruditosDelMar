@@ -2,24 +2,42 @@
   box-sizing: border-box;
   display: grid;
   min-height: 100svh;
-  padding: 2rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
   place-items: center;
   text-align: center;
+  background: linear-gradient(145deg, #fffdf8 0%, #f7f1e7 100%);
 }
 
 .welcome__content {
-  width: min(100%, 40rem);
+  box-sizing: border-box;
+  width: min(100%, 42rem);
+  padding: clamp(2.5rem, 8vw, 5rem) clamp(1.5rem, 6vw, 4rem);
+  border-top: 0.3rem solid #061536;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 1.25rem 3.5rem rgba(6, 21, 54, 0.1);
 }
 
 .welcome h1 {
   margin: 0;
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  line-height: 1.1;
+  color: #061536;
+  font-size: clamp(2.4rem, 6vw, 3.5rem);
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
 }
 
 .welcome p {
-  margin: 1rem 0 0;
+  margin: 1.25rem 0 0;
+  color: rgba(6, 21, 54, 0.72);
   font-size: clamp(1rem, 3vw, 1.25rem);
   line-height: 1.5;
-  opacity: 0.7;
+}
+
+@media (max-width: 40rem) {
+  .welcome h1 {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+    white-space: normal;
+  }
 }
