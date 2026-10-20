@@ -1,12 +1,5 @@
 import { Link } from 'react-router-dom'
-
-const homeAccessItems = [
-  { label: 'Menú', action: 'Ver menú', to: '/menu' },
-  { label: 'Promociones', action: 'Ver promociones', to: '/promociones' },
-  { label: 'Catálogo', action: 'Ver catálogo', to: '/catalogo' },
-  { label: 'Quiénes somos', action: 'Ver página', to: '/quienes-somos' },
-  { label: 'Ubicación', action: 'Ver ubicación', to: '/ubicacion' },
-]
+import banner from '../assets/banner-cruditos-del-mar.jpg'
 
 function HomePage() {
   return (
@@ -22,28 +15,11 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="photo-placeholder hero__photo" aria-hidden="true" />
-        </div>
-      </section>
-
-      <section className="home-navigation" aria-labelledby="home-navigation-title">
-        <div className="content-width">
-          <div className="home-navigation__heading">
-            <p className="section-label">Navegación</p>
-            <h2 id="home-navigation-title">Accesos</h2>
-          </div>
-
-          <div className="home-access-grid">
-            {homeAccessItems.map((item) => (
-              <Link className="home-access-card" to={item.to} key={item.to}>
-                <span className="home-access-card__label">{item.label}</span>
-                <span className="home-access-card__action">
-                  {item.action}
-                  <span aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
-          </div>
+          <img
+            className="hero__banner"
+            src={banner}
+            alt="Cruditos del Mar. Del mar a tu paladar. Orgullosamente puriscaleños."
+          />
         </div>
       </section>
     </main>

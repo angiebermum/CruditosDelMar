@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import promotions from '../data/promotions.js'
 import formatPrice from '../utils/formatPrice.js'
 
@@ -27,6 +28,13 @@ const promotionSections = [
     acceso: 'Jueves',
   },
   {
+    id: 'viernes',
+    titulo: 'Viernes',
+    descripcion: 'Promociones disponibles los viernes',
+    dias: ['Viernes'],
+    acceso: 'Viernes',
+  },
+  {
     id: 'viernes-sabado',
     titulo: 'Viernes y sábado',
     descripcion: 'Promociones disponibles viernes y sábado',
@@ -47,14 +55,15 @@ function getPromotionsBySection(section) {
     .filter((promotion) => (
       section.dias.length === 0
         ? promotion.diasDisponibles.length === 0
-        : section.dias.every((day) => promotion.diasDisponibles.includes(day))
+        : promotion.diasDisponibles.length === section.dias.length
+          && section.dias.every((day) => promotion.diasDisponibles.includes(day))
     ))
     .sort((first, second) => first.orden - second.orden)
 }
 
 function getPromotionDisplayTitle(title) {
   return title
-    .replace(/^(?:Promo de )?(?:Martes|Miércoles|Jueves)(?: de Promo)? - /, '')
+    .replace(/^(?:Promo de )?(?:Martes|Miércoles|Jueves|Viernes)(?: de Promo)? - /, '')
     .replace(/^Viernes y Sábados /, '')
     .replace(/^Promo de /, '')
 }
@@ -134,6 +143,10 @@ function PromotionsPage() {
                               </div>
                             ))}
                           </div>
+
+                          <Link className="promotion-card__action" to={`/promocion/${promotion.id}`}>
+                            Ver promoción
+                          </Link>
                         </div>
                       </article>
                     ))}

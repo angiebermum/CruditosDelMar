@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import categories from '../data/categories.js'
 import products from '../data/products.js'
 import formatPrice from '../utils/formatPrice.js'
@@ -8,7 +9,6 @@ import groupProducts from '../utils/groupProducts.js'
 const ALL_PRODUCTS = 'all'
 
 function CatalogPage() {
-  const [selectedProduct, setSelectedProduct] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const productsSectionRef = useRef(null)
 
@@ -136,9 +136,9 @@ function CatalogPage() {
                                       ))
                                     )}
                                   </div>
-                                  <button className="product-card__action" type="button" onClick={() => setSelectedProduct(product)}>
+                                  <Link className="product-card__action" to={`/producto/${product.id}`}>
                                     Ver producto
-                                  </button>
+                                  </Link>
                                 </div>
                               </article>
                             )
@@ -158,91 +158,6 @@ function CatalogPage() {
         </div>
       </section>
 
-      {selectedProduct && (
-        <div className="product-detail-backdrop" role="presentation">
-          <section className="product-detail" role="dialog" aria-modal="true" aria-labelledby="product-detail-title">
-            <button
-              className="product-detail__close"
-              type="button"
-              aria-label="Cerrar detalle del producto"
-              onClick={() => setSelectedProduct(null)}
-            >
-              ×
-            </button>
-
-            <div className="product-detail__image" aria-hidden="true" />
-
-            <div className="product-detail__content">
-              <p className="section-label">{selectedProduct.categoria}</p>
-              <h2 id="product-detail-title">{selectedProduct.nombre}</h2>
-              {selectedProduct.descripcion && (
-                <p className="product-detail__description">{selectedProduct.descripcion}</p>
-              )}
-              {selectedProduct.opciones && (
-                <p className="product-detail__description">
-                  {selectedProduct.etiquetaOpciones ?? 'Opciones'}: {selectedProduct.opciones.join(' · ')}
-                </p>
-              )}
-
-              {selectedProduct.variantes ? (
-                <div className="product-detail__summary product-detail__summary--presentations">
-                  <span>Variantes</span>
-                  <div className="product-detail__presentation-list">
-                    {selectedProduct.variantes.map((variant) => (
-                      <div className="product-detail__presentation" key={`${variant.nombre}-${variant.presentacion}`}>
-                        <span>{variant.nombre} · {variant.presentacion}</span>
-                        <strong>{formatPrice(variant.precio)}</strong>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : selectedProduct.presentaciones ? (
-                <div className="product-detail__summary product-detail__summary--presentations">
-                  <span>Presentaciones</span>
-                  <div className="product-detail__presentation-list">
-                    {getProductPrices(selectedProduct).map((presentation) => (
-                      <div className="product-detail__presentation" key={presentation.nombre}>
-                        <span>{presentation.nombre}</span>
-                        <strong>{formatPrice(presentation.precio)}</strong>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="product-detail__summary">
-                  <span>Precio</span>
-                  <strong>{formatPrice(selectedProduct.precio)}</strong>
-                </div>
-              )}
-
-              {!selectedProduct.presentaciones && !selectedProduct.variantes && (
-                <div className="product-option" hidden>
-                  <h3>Presentación o tamaño</h3>
-                  <div className="option-pills" />
-                </div>
-              )}
-
-              <div className="product-option">
-                <h3>Cantidad</h3>
-                <div className="quantity-preview" aria-label="Control visual de cantidad">
-                  <button type="button" disabled aria-label="Disminuir cantidad">−</button>
-                  <span>1</span>
-                  <button type="button" disabled aria-label="Aumentar cantidad">+</button>
-                </div>
-              </div>
-
-              <div className="product-option" hidden>
-                <h3>Personalización</h3>
-                <div className="customization-preview" />
-              </div>
-
-              <button className="add-to-cart-preview" type="button" disabled>
-                Agregar al carrito
-              </button>
-            </div>
-          </section>
-        </div>
-      )}
     </main>
   )
 }

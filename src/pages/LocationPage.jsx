@@ -1,3 +1,5 @@
+import storefrontPhoto from '../assets/local-cruditos-del-mar-completo.jpg'
+
 function LocationPage() {
   return (
     <main className="location-page">
@@ -16,14 +18,26 @@ function LocationPage() {
                 <p>San José, Costa Rica</p>
               </div>
               <p className="location__reference">50 metros al norte de la Delegación Policial de Puriscal, diagonal a Maxi Palí.</p>
-              <span className="secondary-action location__action" aria-disabled="true">Cómo llegar</span>
+              <a
+                className="secondary-action location__action"
+                href="https://maps.app.goo.gl/wwxbWZedtMxFAk167?g_st=iw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cómo llegar
+              </a>
             </article>
 
-            <div className="map-placeholder location__map" aria-hidden="true">
-              <span className="location__map-point location__map-point--start" />
-              <span className="location__map-route" />
-              <span className="location__map-point location__map-point--end" />
-            </div>
+            <a
+              className="location__photo"
+              href={storefrontPhoto}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver foto completa del local en una pestaña nueva"
+            >
+              <img src={storefrontPhoto} alt="Frente del local de Cruditos del Mar en Santiago de Puriscal" />
+              <span className="location__photo-hint">Ver foto completa</span>
+            </a>
           </div>
         </div>
       </section>

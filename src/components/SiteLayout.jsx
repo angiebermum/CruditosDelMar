@@ -1,5 +1,6 @@
 import { Link, Outlet } from 'react-router-dom'
 import logo from '../assets/logo-cruditos-del-mar.jpg'
+import { useCart } from '../context/useCart.js'
 
 const navigationItems = [
   { label: 'Inicio', to: '/' },
@@ -11,6 +12,8 @@ const navigationItems = [
 ]
 
 function SiteLayout() {
+  const { totalItems } = useCart()
+
   return (
     <div className="site-shell">
       <header className="site-header">
@@ -28,13 +31,18 @@ function SiteLayout() {
             ))}
           </nav>
 
-          <span className="cart-preview" role="img" aria-label="Carrito">
+          <Link
+            className="cart-preview"
+            to="/carrito"
+            aria-label={`Carrito${totalItems > 0 ? `, ${totalItems} productos` : ''}`}
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6" />
               <circle cx="9.5" cy="19.5" r="1" />
               <circle cx="17.5" cy="19.5" r="1" />
             </svg>
-          </span>
+            {totalItems > 0 && <span className="cart-preview__badge">{totalItems}</span>}
+          </Link>
         </div>
       </header>
 
@@ -48,14 +56,29 @@ function SiteLayout() {
             </span>
             <span className="brand__name">Cruditos del Mar</span>
           </div>
-          <nav className="footer-nav" aria-label="Navegación del pie de página">
-            {navigationItems
-              .filter((item) => item.label !== 'Promociones')
-              .map((item) => (
-                <Link to={item.to} key={item.label}>{item.label}</Link>
-              ))}
-          </nav>
-          <span className="site-footer__placeholder">Instagram · Facebook</span>
+          <div className="site-footer__social">
+            <p>Síguenos en nuestras redes</p>
+            <div className="site-footer__social-links">
+              <a
+                href="https://www.instagram.com/cruditosdelmar?dlrf=MTcwdzFwbnEyMnRrbQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/share/1FuiYU4XKE/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </div>
+          </div>
+          <div className="site-footer__info">
+            <p className="site-footer__slogan">Del mar a tu paladar</p>
+            <p>Santiago de Puriscal, San José</p>
+          </div>
         </div>
       </footer>
     </div>

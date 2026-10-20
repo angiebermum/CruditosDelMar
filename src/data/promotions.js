@@ -92,6 +92,36 @@ const promotions = [
     orden: 2,
   },
   {
+    id: 'viernes-combo-para-dos',
+    titulo: 'Viernes - Combo para dos',
+    disponibilidadTexto: 'Disponible los viernes',
+    diasDisponibles: ['Viernes'],
+    imagen: '',
+    productos: [
+      {
+        nombre: 'Incluye: 1 Hamburguesa Mar y Tierra + 1 Flautas fritas a la cochinilla + 2 Coca-Colas de 250 ml',
+        precio: 7500,
+      },
+    ],
+    activo: true,
+    orden: 1,
+  },
+  {
+    id: 'viernes-promo',
+    titulo: 'Viernes - Combo Caribe + Camarones',
+    disponibilidadTexto: 'Disponible los viernes',
+    diasDisponibles: ['Viernes'],
+    imagen: '',
+    productos: [
+      {
+        nombre: 'Incluye: 1 Caribe Crunch + 1 Camarones empanizados + 2 Coca-Colas de 250 ml',
+        precio: 8000,
+      },
+    ],
+    activo: true,
+    orden: 2,
+  },
+  {
     id: 'caldosas-promocion-semana',
     titulo: 'Promo de Caldosas de la Semana',
     disponibilidadTexto: 'Promoción de la semana',

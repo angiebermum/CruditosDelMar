@@ -6,8 +6,11 @@ const products = [
     grupo: 'Arroces',
     orden: 1,
     precio: 4500,
-    descripcion: null,
+    etiquetaOpciones: 'Acompañamiento a elegir',
+    opciones: ['Ensalada y papas fritas', 'Ensalada y patacón'],
+    descripcion: 'Porción: 1/2',
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-arroz-con-mariscos',
@@ -16,8 +19,11 @@ const products = [
     grupo: 'Arroces',
     orden: 2,
     precio: 5500,
-    descripcion: null,
+    etiquetaOpciones: 'Acompañamiento a elegir',
+    opciones: ['Ensalada y papas fritas', 'Ensalada y patacón'],
+    descripcion: 'Porción: 1/2',
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-arroz-con-pulpo',
@@ -28,6 +34,7 @@ const products = [
     precio: 5500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-camarones-con-arroz',
@@ -38,6 +45,7 @@ const products = [
     precio: 5500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-mariscos-con-arroz',
@@ -48,6 +56,7 @@ const products = [
     precio: 6500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-sopa-mariscos-agua',
@@ -58,6 +67,7 @@ const products = [
     precio: 4500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-sopa-mariscos-leche',
@@ -68,6 +78,7 @@ const products = [
     precio: 5000,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-crema-mariscos',
@@ -78,6 +89,7 @@ const products = [
     precio: 4500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-camarones-empanizados-al-ajillo',
@@ -88,6 +100,7 @@ const products = [
     precio: 4500,
     descripcion: '12 unidades de camarones, ensalada, papas fritas y salsa tártara.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-filet-pescado-empanizado',
@@ -98,6 +111,7 @@ const products = [
     precio: 4200,
     descripcion: 'Ensalada, salsa tártara y papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-pargo-frito',
@@ -108,6 +122,7 @@ const products = [
     precio: 7500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-pargo-frito-relleno-camarones',
@@ -118,6 +133,7 @@ const products = [
     precio: 8500,
     descripcion: 'Ensalada, patacón, frijoles molidos y guacamole.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'platos-fuertes-chifrijo-camarones-pulpo',
@@ -128,6 +144,7 @@ const products = [
     precio: 6500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-vuelve-a-la-vida',
@@ -143,6 +160,7 @@ const products = [
     ],
     descripcion: 'Mix pescado, pulpo, camarón y calamar en salsa de la casa',
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-caribeno',
@@ -158,6 +176,7 @@ const products = [
     ],
     descripcion: 'Ceviche de pescado, surimi y mango en salsa caribeña',
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-pulpo',
@@ -173,6 +192,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-camaron',
@@ -188,6 +208,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-pescado-camaron',
@@ -203,6 +224,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-tropical',
@@ -218,6 +240,7 @@ const products = [
     ],
     descripcion: 'Ceviche de pescado y piña en salsa tropical',
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-tipo-peruano',
@@ -233,6 +256,7 @@ const products = [
     ],
     descripcion: 'Ceviche de pescado y elotitos tostados en su salsa Ají Peruano',
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-ceviche-pescado',
@@ -248,6 +272,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-coctel-camaron',
@@ -260,6 +285,7 @@ const products = [
     ],
     descripcion: 'Camarón, aguacate, pepino y tomate, en salsa a base de jugo de tomate',
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-chichaldosa',
@@ -273,6 +299,7 @@ const products = [
     ],
     descripcion: 'Caldosa de chicharrón con pico de gallo',
     imagen: null,
+    extras: [],
   },
   {
     id: 'ceviches-caldosas-carnosa',
@@ -286,6 +313,7 @@ const products = [
     ],
     descripcion: 'Caldosa de carne mechada con pico de gallo',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-flautas-fritas-cochinilla',
@@ -296,6 +324,7 @@ const products = [
     precio: 4000,
     descripcion: 'Tortilla de harina rellena de carne de cerdo y piña, arreglada con lechuga, pico de gallo, guacamole, salsa de queso y acompañadas de papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-burrito',
@@ -314,6 +343,7 @@ const products = [
     ],
     descripcion: 'Frijoles molidos, guacamole, lechuga, tomate, cebolla caramelizada, salsa de queso, salsas de la casa y acompañado de papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-hamburguesa-mar-tierra',
@@ -324,6 +354,7 @@ const products = [
     precio: 4300,
     descripcion: 'Torta de res casera bañada en salsa BBQ, queso, cebolla caramelizada, camarones empanizados y acompañado de papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-hamburguesa-pollo-empanizado-guacamole',
@@ -334,6 +365,7 @@ const products = [
     precio: 4300,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-wrap-cerdo-camarones-bbq',
@@ -344,6 +376,7 @@ const products = [
     precio: 4300,
     descripcion: 'Frijoles molidos, guacamole, lechuga, tomate, cebolla caramelizada, mozzarella, piña, tortilla de trigo, salsa de queso, salsas de la casa y acompañados de papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-caribe-crunch',
@@ -354,6 +387,7 @@ const products = [
     precio: 4500,
     descripcion: 'Pollo frito tipo caribeño, guacamole, pico de gallo, chilera, patacones y papas fritas con salsa de queso y salsas de la casa.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-papa-nacho-carne-camarones',
@@ -367,6 +401,7 @@ const products = [
     ],
     descripcion: 'Tortillas tostadas, papas, frijoles molidos, salsa de queso, mozzarella, natilla, guacamole, pico de gallo y cebollino.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'snacks-huevos-tortuga',
@@ -379,6 +414,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'menu-infantil-mini-hamburguesa-carne-pollo',
@@ -389,6 +425,7 @@ const products = [
     precio: 2200,
     descripcion: 'Lechuga, tomate, queso y acompañado de papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'menu-infantil-nuggets-pescado-pollo',
@@ -399,6 +436,7 @@ const products = [
     precio: 2800,
     descripcion: 'Acompañado de papas fritas.',
     imagen: null,
+    extras: [],
   },
   {
     id: 'menu-infantil-salchipapas',
@@ -409,6 +447,7 @@ const products = [
     precio: 1800,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'bebidas-frescos-naturales',
@@ -424,6 +463,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'bebidas-chamoyadas',
@@ -435,6 +475,7 @@ const products = [
     opciones: ['Mango', 'Fresa', 'Sandía', 'Piña'],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'bebidas-gaseosas',
@@ -455,6 +496,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'bebidas-agua',
@@ -465,6 +507,7 @@ const products = [
     precio: 1000,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'bebidas-powerade',
@@ -477,6 +520,7 @@ const products = [
     opciones: ['Azul', 'Rojo'],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'bebidas-hi-c',
@@ -487,6 +531,7 @@ const products = [
     precio: 500,
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'postres-apretados-leche',
@@ -510,6 +555,7 @@ const products = [
     ],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'postres-apretado-agua',
@@ -522,6 +568,7 @@ const products = [
     opciones: ['Frutas'],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
   {
     id: 'postres-crepa-helado-fresa-banano',
@@ -534,6 +581,7 @@ const products = [
     opciones: ['Caramelo', 'Nutella'],
     descripcion: null,
     imagen: null,
+    extras: [],
   },
 ]
 

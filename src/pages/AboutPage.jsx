@@ -26,13 +26,13 @@ function AboutPage() {
             <article className="about__principle">
               <span className="about__principle-mark" aria-hidden="true" />
               <h3>Misión</h3>
-              <p>Ofrecer alimentos y bebidas de calidad, con una atención amable, ágil y personalizada, brindando a los clientes diferentes opciones de productos y facilitando el proceso de consulta y solicitud de pedidos.</p>
+              <p>Brindar a los clientes productos gastronómicos con altos estándares de calidad, destacando el sabor único del local y promover el bienestar a través de ingredientes frescos y nutritivos.</p>
             </article>
 
             <article className="about__principle">
               <span className="about__principle-mark" aria-hidden="true" />
               <h3>Visión</h3>
-              <p>Ser un emprendimiento reconocido en Puriscal y sus alrededores por la calidad y variedad de sus productos, la atención cercana a sus clientes y la incorporación de herramientas tecnológicas que apoyen su crecimiento.</p>
+              <p>Ser reconocidos a nivel nacional como una de las mejores opciones de soda y cevichería, con proyección de crecimiento y expansión, manteniendo siempre el compromiso con la calidad y satisfacción del cliente.</p>
             </article>
           </div>
         </div>
